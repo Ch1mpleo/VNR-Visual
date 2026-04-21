@@ -87,7 +87,7 @@ export default function Context() {
           <HistoricPhoto
             src="https://vcdn1-vnexpress.vnecdn.net/2015/01/09/12-9406-1420769930.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=jfsZVILGF--946VL-4nhpg"
             alt="Nạn đói năm Ất Dậu 1945 — hơn 2 triệu đồng bào chết đói"
-            caption="Nạn đói Ất Dậu 1945 · Người dân chết đói trên đường phố Hà Nội"
+            caption="Nạn đói Ất Dậu 1945"
             credit="Ảnh tư liệu · Public Domain"
             year="1945"
             aspect="landscape"
@@ -95,7 +95,7 @@ export default function Context() {
           <HistoricPhoto
             src="https://c.files.bbci.co.uk/C01E/production/_103228194_phapnhat.jpg"
             alt="Nhật đảo chính Pháp ngày 09/03/1945 — khoảng trống quyền lực hình thành"
-            caption="09/03/1945 · Nhật đảo chính Pháp — thời cơ vàng của cách mạng"
+            caption="09/03/1945 · Nhật đảo chính Pháp"
             credit="Ảnh tư liệu · Public Domain"
             year="1945"
             aspect="landscape"
@@ -103,10 +103,10 @@ export default function Context() {
         </div>
 
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <StatBlock value={2_000_000} caption="đồng bào chết đói · Ất Dậu" />
-          <StatBlock value={90} suffix="%" caption="dân số mù chữ" />
-          <StatBlock value={200_000} caption="quân Tưởng vào miền Bắc" />
-          <StatBlock value={60_000} caption="quân Nhật chờ giải giáp" />
+          <StatBlock value={1858} caption="năm Pháp đổ bộ · mở đầu đô hộ" />
+          <StatBlock value={87} suffix=" năm" caption="Việt Nam dưới ách thực dân Pháp" />
+          <StatBlock value={2_000_000} caption="đồng bào chết đói · Ất Dậu 1945" />
+          <StatBlock value={90} suffix="%" caption="dân số mù chữ dưới ách thực dân" />
         </div>
 
         <div className="mt-14 relative border-y-2 border-ink overflow-hidden bg-ink text-cream">
