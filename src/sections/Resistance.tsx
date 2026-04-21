@@ -201,13 +201,16 @@ export default function Resistance() {
                   </span>
                 </div>
                 <h3 className="headline text-2xl md:text-3xl uppercase leading-tight mb-3">
-                  Biên Giới — khai thông quốc tế
+                  Biên Giới Thu Đông
                 </h3>
                 <p className="serif leading-relaxed text-cream/95">
-                  Mở đường liên lạc với Trung Quốc và hệ thống xã hội chủ
-                  nghĩa. Lần đầu tiên quân đội ta{" "}
-                  <strong>giành quyền chủ động chiến lược</strong> trên chiến
-                  trường chính.
+                  Nhằm phá bỏ sự phong toả của địch, tiêu diệt sinh lực địch và
+                  mở rộng căn cứ địa, tháng 6-1950 Đảng quyết định mở chiến dịch
+                  Biên giới. Trải qua{" "}
+                  <strong>30 ngày đêm chiến đấu (16-9 đến 17-10-1950)</strong>,
+                  ta giành thắng lợi to lớn, kết thúc thời kỳ chiến đấu trong
+                  vòng vây, mở ra cục diện mới đưa cuộc kháng chiến sang giai
+                  đoạn phát triển cao hơn.
                 </p>
               </SpotlightCard>
             </AnimatedContent>
