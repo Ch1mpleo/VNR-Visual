@@ -70,7 +70,7 @@ export default function Hero() {
                 href="#context"
                 className="bg-blood text-cream px-5 py-2.5 font-headline uppercase tracking-wide text-xs md:text-sm shadow-[3px_3px_0_#F5F5DC] hover:-translate-y-0.5 transition-transform"
               >
-                Bước vào kho lưu trữ →
+                Bước vào →
               </a>
               <a
                 href="#lessons"
