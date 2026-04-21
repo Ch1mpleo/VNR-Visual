@@ -1,0 +1,130 @@
+import SectionHeader from "@/components/ui/SectionHeader";
+import ArchivalCard from "@/components/ui/ArchivalCard";
+import CountUp from "@/components/CountUp";
+import AnimatedContent from "@/components/AnimatedContent";
+import { ScrollVelocity } from "@/components/ScrollVelocity";
+
+export default function Context() {
+  return (
+    <section
+      id="context"
+      className="relative py-24 md:py-32 bg-cream grain overflow-hidden"
+    >
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <SectionHeader
+          phase="Phần I"
+          eyebrow="Trước Cách mạng Tháng Tám"
+          title="MỘT CỔ HAI TRÒNG"
+          tagline='Đêm trước giành chính quyền: Pháp và Nhật cấu kết, bóp nghẹt Đông Dương trong hai vòng xiềng xích.'
+        />
+
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+          <AnimatedContent distance={80} delay={0}>
+            <ArchivalCard
+              label="CHÍNH TRỊ · 09/1940"
+              number="I"
+              variant="cream"
+            >
+              <p className="mb-3">
+                Pháp đầu hàng, cấu kết cùng Nhật: một bên giữ quyền cai trị,
+                một bên biến Đông Dương thành căn cứ và{" "}
+                <em>“kho vựa lương thực”</em> cho chiến tranh.
+              </p>
+              <p className="mb-3">
+                <strong className="text-blood">09/03/1945</strong> — Nhật đảo
+                chính Pháp. Chính phủ Trần Trọng Kim chỉ là bù nhìn, không
+                quyền lực thực tế.
+              </p>
+              <p>
+                Nhật đầu hàng Đồng minh → <strong>khoảng trống quyền lực</strong>{" "}
+                — thời cơ vàng.
+              </p>
+            </ArchivalCard>
+          </AnimatedContent>
+
+          <AnimatedContent distance={80} delay={0.12}>
+            <ArchivalCard
+              label="KINH TẾ · KIỆT QUỆ"
+              number="II"
+              variant="ink"
+            >
+              <p className="mb-3">
+                Chính sách <em>“nhổ lúa trồng đay”</em>: nhân dân bị cưỡng bức
+                phá ruộng, phục vụ nhu cầu chiến tranh của Nhật Bản.
+              </p>
+              <p className="mb-3">
+                Thu mua gạo giá rẻ mạt. Tích trữ lương thực cho quân đội.
+              </p>
+              <p>
+                Lạm phát phi mã: giá gạo bật lên{" "}
+                <strong className="text-blood">hàng trăm lần</strong> chỉ trong
+                vài năm.
+              </p>
+            </ArchivalCard>
+          </AnimatedContent>
+
+          <AnimatedContent distance={80} delay={0.24}>
+            <ArchivalCard
+              label="XÃ HỘI · ẤT DẬU 1945"
+              number="III"
+              variant="blood"
+            >
+              <p className="mb-3">
+                Nạn đói lịch sử năm Ất Dậu cướp đi hơn{" "}
+                <strong>hai triệu đồng bào</strong>. Nhiều làng quê chết
+                50–80% dân số.
+              </p>
+              <p>
+                90% dân số mù chữ — hệ quả của chính sách ngu dân nhiều thập
+                niên dưới ách thực dân.
+              </p>
+            </ArchivalCard>
+          </AnimatedContent>
+        </div>
+
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <StatBlock value={2_000_000} caption="đồng bào chết đói · Ất Dậu" />
+          <StatBlock value={90} suffix="%" caption="dân số mù chữ" />
+          <StatBlock value={200_000} caption="quân Tưởng vào miền Bắc" />
+          <StatBlock value={60_000} caption="quân Nhật chờ giải giáp" />
+        </div>
+
+        <div className="mt-14 relative border-y-2 border-ink py-4 bg-ink text-cream">
+          <ScrollVelocity
+            texts={[
+              "NHỔ LÚA · TRỒNG ĐAY · NẠN ĐÓI · ẤT DẬU · MỘT CỔ HAI TRÒNG · ",
+              "PHÁP - NHẬT · BÙ NHÌN · THỜI CƠ VÀNG · CÁCH MẠNG THÁNG TÁM · ",
+            ]}
+            velocity={40}
+            className="font-headline text-ink"
+            scrollerClassName="text-cream uppercase tracking-tight"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatBlock({
+  value,
+  caption,
+  suffix = "",
+}: {
+  value: number;
+  caption: string;
+  suffix?: string;
+}) {
+  return (
+    <AnimatedContent distance={40}>
+      <div className="relative bg-bone border-2 border-ink p-4 md:p-5 shadow-[5px_5px_0_#1A1A1A]">
+        <div className="font-headline text-[clamp(2rem,5vw,4rem)] leading-none text-blood">
+          <CountUp to={value} duration={2.4} separator="," />
+          {suffix}
+        </div>
+        <div className="mt-2 font-mono text-[10px] md:text-xs tracking-[0.25em] uppercase text-ink/80">
+          {caption}
+        </div>
+      </div>
+    </AnimatedContent>
+  );
+}
