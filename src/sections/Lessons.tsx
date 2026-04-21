@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CountUp from "@/components/CountUp";
 import AnimatedContent from "@/components/AnimatedContent";
@@ -5,7 +6,15 @@ import RotatingText from "@/components/RotatingText";
 import StampTag from "@/components/ui/StampTag";
 import CardSwap, { Card } from "@/components/CardSwap";
 import PixelCard from "@/components/PixelCard";
-import HistoricPhoto from "@/components/ui/HistoricPhoto";
+import ImageLightbox, { type LightboxImage } from "@/components/ui/ImageLightbox";
+
+const LEGACY_IMAGE: LightboxImage = {
+  src: "https://i.pinimg.com/736x/85/3a/d6/853ad6e7918f261e15d3cf46a7674dc2.jpg",
+  alt: "Thế hệ Việt Nam hôm nay — tiếp nối tinh thần 1954",
+  caption: "Thế hệ kế tiếp · Tinh thần trường kỳ sống mãi trong lòng dân tộc",
+  credit: "Ảnh tư liệu hiện đại",
+  year: "Hôm nay",
+};
 
 const LESSONS = [
   {
@@ -39,6 +48,8 @@ const LESSONS = [
 ];
 
 export default function Lessons() {
+  const [posterOpen, setPosterOpen] = useState(false);
+
   return (
     <section
       id="lessons"
@@ -121,26 +132,134 @@ export default function Lessons() {
           ))}
         </div>
 
-        {/*
-          ══════════════════════════════════════════════════════════════════
-          📷 LESSONS SECTION — HIGH-IMPACT PHOTO SLOT
-          Place a modern photo that bridges history and today: FPT campus,
-          Vietnamese students/professionals, or a crowd of Vietnamese people
-          celebrating (e.g. the user's flag-waving nighttime photo).
+        {/* ══════════════════════════════════════════════════════════════════
+            🖼️  LEGACY POSTER — dedicated highlight block for the portrait
+            image. Image keeps its natural proportions on the left; a bold
+            propaganda-poster-style headline sits on the right. The image is
+            clickable and opens full-resolution in the shared lightbox.
+            ══════════════════════════════════════════════════════════════════ */}
+        <AnimatedContent distance={80}>
+          <div className="mt-20 relative">
+            {/* Floating "Di sản" tag — pokes out above the card */}
+            <div className="absolute -top-5 left-6 md:left-10 z-10">
+              <StampTag tone="red" rotate={-3}>
+                Di sản · 1954 → Hôm nay
+              </StampTag>
+            </div>
 
-          → Change src="" below to your image URL.
-          ══════════════════════════════════════════════════════════════════
-        */}
-        <div className="mt-16">
-          <HistoricPhoto
-            src=""
-            alt="Thế hệ Việt Nam hôm nay — tiếp nối tinh thần 1954"
-            caption="Thế hệ kế tiếp · Tinh thần trường kỳ sống mãi trong lòng dân tộc"
-            credit="Ảnh tư liệu hiện đại"
-            aspect="wide"
-            colorize={false}
-          />
-        </div>
+            <div className="relative bg-ink text-cream border-4 border-ink shadow-[14px_14px_0_#D32F2F] overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
+                {/* ─── IMAGE SIDE — natural portrait, never cropped ─── */}
+                <button
+                  type="button"
+                  onClick={() => setPosterOpen(true)}
+                  className="relative md:col-span-5 lg:col-span-5 group bg-ink overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-flagYellow cursor-zoom-in"
+                  aria-label={`Phóng to: ${LEGACY_IMAGE.alt}`}
+                >
+                  <div className="relative w-full h-full min-h-[360px] md:min-h-[460px] flex items-center justify-center">
+                    <img
+                      src={LEGACY_IMAGE.src}
+                      alt={LEGACY_IMAGE.alt}
+                      className="block w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+
+                    {/* Red gradient tint — propaganda-poster feel */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-ink/80 via-ink/10 to-blood/30 mix-blend-multiply pointer-events-none" />
+
+                    {/* Archival grain */}
+                    <div
+                      className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")`,
+                      }}
+                    />
+
+                    {/* Vertical edge — flag-yellow rule */}
+                    <div className="absolute top-0 bottom-0 right-0 w-1 bg-flagYellow" />
+                  </div>
+
+                  {/* Zoom hint on hover */}
+                  <div className="absolute top-4 right-4 bg-blood text-cream grid place-items-center w-10 h-10 border-2 border-cream opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    >
+                      <path d="M5 5h5M5 5v5M5 5l6 6M19 19h-5M19 19v-5M19 19l-6-6" strokeLinecap="round" />
+                    </svg>
+                  </div>
+
+                  {/* Caption strip at bottom of image */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-blood text-cream font-mono text-[10px] uppercase tracking-[0.35em] px-4 py-2.5 flex items-center justify-between pointer-events-none">
+                    <span>Thế hệ kế tiếp</span>
+                    <span className="text-flagYellow">Nhấp để phóng to</span>
+                  </div>
+                </button>
+
+                {/* ─── TEXT SIDE ─── */}
+                <div className="md:col-span-7 lg:col-span-7 relative p-8 md:p-10 lg:p-14 flex flex-col justify-center gap-6">
+                  {/* Decorative corner ticks */}
+                  <div className="absolute top-4 right-4 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-blood" />
+                    <span className="w-2 h-2 bg-flagYellow" />
+                    <span className="w-2 h-2 bg-cream/40" />
+                  </div>
+
+                  <div className="font-mono text-[10px] md:text-xs uppercase tracking-[0.4em] text-cream/55">
+                    Bài học V · ngoài trang sử
+                  </div>
+
+                  <h3 className="headline text-[clamp(1.75rem,4vw,3.25rem)] uppercase leading-[1.05] text-cream">
+                    Tinh thần <span className="text-flagYellow">1954</span>
+                    <br />
+                    sống mãi trong dân tộc
+                  </h3>
+
+                  <div className="flex items-center gap-2">
+                    <span className="h-[3px] w-12 bg-blood" />
+                    <span className="h-[3px] w-28 bg-cream" />
+                  </div>
+
+                  <p className="serif italic text-base md:text-lg text-cream/90 leading-relaxed max-w-xl">
+                    Từ <em>"hũ gạo cứu đói"</em> đến giảng đường hôm nay — từ
+                    chiến sĩ áo nâu đến lập trình viên, kỹ sư AI — ngọn lửa
+                    trường kỳ vẫn cháy.
+                  </p>
+
+                  <p className="serif text-base md:text-lg text-cream/80 leading-relaxed max-w-xl">
+                    Lịch sử không ngủ. Nó{" "}
+                    <span className="text-blood font-semibold not-italic">
+                      đang sống
+                    </span>{" "}
+                    trong mỗi quyết định của thế hệ hôm nay — mỗi dòng code,
+                    mỗi bài thuyết trình, mỗi startup giờ đây vẫn mang DNA
+                    của{" "}
+                    <span className="text-flagYellow">Điện Biên Phủ</span>.
+                  </p>
+
+                  <div className="pt-4 mt-2 border-t border-cream/15 flex flex-wrap items-center justify-between gap-3">
+                    <span className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-cream/50">
+                      {LEGACY_IMAGE.credit}
+                    </span>
+                    <span className="font-headline text-xs md:text-sm tracking-[0.3em] text-flagYellow">
+                      — VNR202 · 2025
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedContent>
+
+        <ImageLightbox
+          open={posterOpen}
+          images={[LEGACY_IMAGE]}
+          index={0}
+          onClose={() => setPosterOpen(false)}
+          onIndexChange={() => {}}
+        />
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-6">
