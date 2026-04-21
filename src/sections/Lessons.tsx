@@ -5,6 +5,7 @@ import RotatingText from "@/components/RotatingText";
 import StampTag from "@/components/ui/StampTag";
 import CardSwap, { Card } from "@/components/CardSwap";
 import PixelCard from "@/components/PixelCard";
+import HistoricPhoto from "@/components/ui/HistoricPhoto";
 
 const LESSONS = [
   {
@@ -120,7 +121,28 @@ export default function Lessons() {
           ))}
         </div>
 
-        <div className="mt-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        {/*
+          ══════════════════════════════════════════════════════════════════
+          📷 LESSONS SECTION — HIGH-IMPACT PHOTO SLOT
+          Place a modern photo that bridges history and today: FPT campus,
+          Vietnamese students/professionals, or a crowd of Vietnamese people
+          celebrating (e.g. the user's flag-waving nighttime photo).
+
+          → Change src="" below to your image URL.
+          ══════════════════════════════════════════════════════════════════
+        */}
+        <div className="mt-16">
+          <HistoricPhoto
+            src=""
+            alt="Thế hệ Việt Nam hôm nay — tiếp nối tinh thần 1954"
+            caption="Thế hệ kế tiếp · Tinh thần trường kỳ sống mãi trong lòng dân tộc"
+            credit="Ảnh tư liệu hiện đại"
+            aspect="wide"
+            colorize={false}
+          />
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           <div className="lg:col-span-6">
             <StampTag tone="red">Case Study · FPT 2025</StampTag>
             <h3 className="mt-6 headline text-[clamp(2rem,5vw,3.5rem)] uppercase leading-tight text-ink">

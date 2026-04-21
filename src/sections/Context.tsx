@@ -3,6 +3,7 @@ import ArchivalCard from "@/components/ui/ArchivalCard";
 import CountUp from "@/components/CountUp";
 import AnimatedContent from "@/components/AnimatedContent";
 import { ScrollVelocity } from "@/components/ScrollVelocity";
+import HistoricPhoto from "@/components/ui/HistoricPhoto";
 
 export default function Context() {
   return (
@@ -82,22 +83,33 @@ export default function Context() {
           </AnimatedContent>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mt-10">
+          <HistoricPhoto
+            src="https://vcdn1-vnexpress.vnecdn.net/2015/01/09/12-9406-1420769930.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=jfsZVILGF--946VL-4nhpg"
+            alt="Nạn đói năm Ất Dậu 1945 — hơn 2 triệu đồng bào chết đói"
+            caption="Nạn đói Ất Dậu 1945 · Người dân chết đói trên đường phố Hà Nội"
+            credit="Ảnh tư liệu · Public Domain"
+            year="1945"
+            aspect="wide"
+          />
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
           <StatBlock value={2_000_000} caption="đồng bào chết đói · Ất Dậu" />
           <StatBlock value={90} suffix="%" caption="dân số mù chữ" />
           <StatBlock value={200_000} caption="quân Tưởng vào miền Bắc" />
           <StatBlock value={60_000} caption="quân Nhật chờ giải giáp" />
         </div>
 
-        <div className="mt-14 relative border-y-2 border-ink py-4 bg-ink text-cream">
+        <div className="mt-14 relative border-y-2 border-ink overflow-hidden bg-ink text-cream">
           <ScrollVelocity
             texts={[
               "NHỔ LÚA · TRỒNG ĐAY · NẠN ĐÓI · ẤT DẬU · MỘT CỔ HAI TRÒNG · ",
               "PHÁP - NHẬT · BÙ NHÌN · THỜI CƠ VÀNG · CÁCH MẠNG THÁNG TÁM · ",
             ]}
             velocity={40}
-            className="font-headline text-ink"
-            scrollerClassName="text-cream uppercase tracking-tight"
+            className="font-headline text-cream"
+            scrollerClassName="!font-headline !text-cream !text-2xl !md:text-3xl uppercase tracking-tight py-2"
           />
         </div>
       </div>
@@ -116,12 +128,12 @@ function StatBlock({
 }) {
   return (
     <AnimatedContent distance={40}>
-      <div className="relative bg-bone border-2 border-ink p-4 md:p-5 shadow-[5px_5px_0_#1A1A1A]">
-        <div className="font-headline text-[clamp(2rem,5vw,4rem)] leading-none text-blood">
+      <div className="relative bg-bone border-2 border-ink p-3 md:p-4 shadow-[5px_5px_0_#1A1A1A] overflow-hidden">
+        <div className="font-headline text-[clamp(1.4rem,3.2vw,2.25rem)] leading-none text-blood truncate">
           <CountUp to={value} duration={2.4} separator="," />
           {suffix}
         </div>
-        <div className="mt-2 font-mono text-[10px] md:text-xs tracking-[0.25em] uppercase text-ink/80">
+        <div className="mt-2 font-mono text-[9px] md:text-[10px] tracking-[0.2em] uppercase text-ink/80 leading-snug">
           {caption}
         </div>
       </div>

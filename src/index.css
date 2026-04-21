@@ -68,7 +68,8 @@
     font-family: "Archivo Black", "Epilogue", system-ui, sans-serif;
     font-weight: 900;
     letter-spacing: -0.04em;
-    line-height: 0.88;
+    /* 1.1 — tight but gives room for Vietnamese diacritics above & below */
+    line-height: 1.1;
     text-transform: uppercase;
   }
 

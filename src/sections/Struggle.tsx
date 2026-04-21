@@ -4,6 +4,7 @@ import AnimatedContent from "@/components/AnimatedContent";
 import CountUp from "@/components/CountUp";
 import ScrollReveal from "@/components/ScrollReveal";
 import StampTag from "@/components/ui/StampTag";
+import HistoricPhoto from "@/components/ui/HistoricPhoto";
 
 const THREE_ENEMIES = [
   {
@@ -100,7 +101,18 @@ export default function Struggle() {
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div className="mt-14">
+          <HistoricPhoto
+            src="https://laodongthudo.vn/stores/news_dataimages/quocdai/082019/30/17/4634_Ynh_11.jpg"
+            alt="Lớp Bình dân học vụ · Xoá mù chữ toàn dân 1945–1946"
+            caption="Bình dân học vụ · Nhân dân học chữ dưới ánh đèn dầu, năm 1945"
+            credit="Ảnh tư liệu · Public Domain"
+            year="1945–46"
+            aspect="landscape"
+          />
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           <div className="bg-cream border-4 border-ink p-7 md:p-9 shadow-[6px_6px_0_#D32F2F]">
             <StampTag tone="red">Củng cố chính quyền</StampTag>
             <ul className="mt-6 serif text-lg space-y-4">

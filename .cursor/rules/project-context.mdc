@@ -2,170 +2,90 @@
 alwaysApply: true
 ---
 
-# TripTogether - Project Context Documentation
+# Context Document: Lịch sử Cách mạng Việt Nam (1945 - 1954) & Bài học Vận dụng
 
-## Project Overview
-
-**TripTogether** is a group travel planning and expense management mobile native app designed to simplify collaborative trip organization. It combines trip planning, democratic decision-making, expense tracking, and photo sharing into a single platform with a distinctive "Clean 80s Retro" aesthetic inspired by vintage computer terminals.
-
-**Core Value Proposition:** Enable groups to plan trips together, vote on destinations and dates, track shared expenses, split costs fairly, and create lasting memories through a shared photo gallery.
-
-----
-
-## Core Features & User Flows
-
-### 1. Group Management
-
-**Creating a Group:**
-- User clicks "Create New Group" from home page
-- Dialog prompts for group name
-- New group is created with current user as admin
-- Redirects to group dashboard
-
-**Inviting Members:**
-- Click "Invite Friends" button
-- Generate shareable invite link
-- Copy link to clipboard
-- Members join via link
-
-### 2. Trip Setup Wizard (6 Phases)
-
-The setup wizard guides users through trip planning with democratic decision-making:
-
-#### Phase 0: Welcome
-- User identity collection (name)
-- Feature overview cards
-- Group info display
-
-#### Phase 1: Trip Context
-- Trip name input
-- Cover photo upload
-- Trip status selection (Planning Mode vs Booked & Ready)
-
-#### Phase 2: Decision Polls
-- **Date Poll:** Admin creates date options, members vote
-  - Supports single-day and multi-day trips
-  - Time-of-day selection for single-day trips
-  - Admin confirms final date
-- **Destination Poll:** Vote on proposed destinations
-- **Budget Poll:** Choose tier (Budget/Comfort/Premium)
-- **Itinerary Method:** Manual vs AI-generated
-
-#### Phase 3: Ideas & Scheduling
-- Add activity ideas via link scraping or manual entry
-- "Idea Bucket" for unscheduled activities
-- Schedule items by day/time slot
-- Heart/favorite system
-- Conflict detection (overcrowding, travel time warnings)
-
-#### Phase 4: Logistics
-- **Packing List:** Personal and shared items
-- **QR Code Upload:** Payment QR for expense settlement
-
-#### Phase 5: Ready Dashboard
-- Trip summary card (destination, dates, activities, packing progress)
-- WiFi credentials
-- Accommodation details
-- Emergency contacts
-- Member readiness status
-
-**Navigation:**
-- Progress bar showing completion percentage
-- Phase indicator circles (completed/current/future)
-- Back/Next buttons with phase-appropriate text
-
-### 3. Expense Tracking & Settlement
-
-**Expense Management:**
-- Create expenses with description, amount, category
-- Select who paid and who to split between
-- Automatic per-person calculation
-- Category icons (Food, Transport, Accommodation, etc.)
-- Receipt scanning capability
-
-**Debt Simplification:**
-- Smart algorithm minimizes number of transactions
-- Shows simplified debts: "A owes B $X"
-- Real-time balance calculation
-- Net balance display (you owe vs you're owed)
-
-**Settlement Flow:**
-- Select debt to settle
-- View payee's QR code
-- Scan with payment app
-- Mark as paid
-- Pixel confetti animation on completion
-
-**Views:**
-- **Settle Tab:** Simplified debts with QR codes
-- **Expenses Tab:** Chronological expense list
-- **History Tab:** Completed settlements
-
-### 4. Photo Gallery
-
-**Instagram-Style Feed:**
-- Grid layout of photos
-- Like and comment functionality
-- Location tags
-- Uploader info with timestamp
-- Typewriter animation for captions
-- Polaroid frame effect on hover
-
-**Upload Flow:**
-- Click "Add Photo" button
-- Select image from device
-- Add caption and location
-- Post to group gallery
-
-### 5. Group Dashboard
-
-**Components:**
-- Trip timeline (expenses, photos, moments)
-- Trip highlights reel
-- Destination voting module
-- Date voting module
-- Trip badges (achievements)
-- Planning board
-- Packing list preview
-- Weather forecast
-- Trip itinerary
-
-**Tabs:**
-- **Overview:** Timeline and highlights
-- **Plan:** Voting and itinerary
-- **Pack:** Packing list management
+Tài liệu này hệ thống hóa toàn bộ nội dung lịch sử chi tiết để phục vụ việc thiết kế giao diện website "Bảo tàng Kỹ thuật số Tương tác".
 
 ---
 
-## User Flows
+## Mục tiêu Dự án (Project Context)
+Website này được xây dựng như một **"Bảo tàng Kỹ thuật số Tương tác" (Interactive Digital Museum)**, kết hợp giữa lưu trữ lịch sử và phân tích quản trị hiện đại. 
 
-### Complete Trip Planning Flow
+### Vai trò của Website:
+*   **Nền tảng Giáo dục Trực quan:** Chuyển hóa những số liệu khô khan và sự kiện lịch sử phức tạp thành trải nghiệm thị giác sống động.
+*   **Cầu nối Tư duy:** Kết nối bài học kháng chiến (1945-1954) với thực tế khởi nghiệp và quản trị doanh nghiệp hiện đại (FPT case study).
+*   **Tuyên ngôn Thiết kế:** Sử dụng phong cách "Revolutionary Constructivist" để tái hiện tinh thần quật khởi.
 
-1. **Start:** User creates group from home page
-2. **Invite:** Share link with friends
-3. **Setup:** Admin navigates to `/group/[id]/setup`
-4. **Phase 0:** Members enter their names
-5. **Phase 1:** Admin sets trip name, photo, status
-6. **Phase 2:**
-   - Poll have multiple PollType (Date, Time, Destination, Budget) and user can create options to vote from
-   - Admin create Poll Date to vote the go date
-   - Members vote on poll
-   - Admin confirms final date
-   - Group votes on destination
-   - Group selects budget tier
-   - Choose itinerary method (manual/AI - AI implement later)
-7. **Phase 3:**
-   - Members add activity ideas with drag & drop feature
-   - Schedule activities by day/time
-   - Heart favorite activities
-8. **Phase 4:**
-   - Fill personal packing list
-   - Claim shared items
-   - Upload payment QR code
-9. **Phase 5: During trip**
-   - Trip starting, user start to go
-   - User create some poll to vote on (its difference from the setup Poll, but still the same service)
-   - Edit activity step
-   - Add expenses to wallet
-   - Upload photos to galler
-10. **Finished trip** Review trip summary, with detail combination of all the log from the trip
+---
+
+## Phần 1: Đặt Vấn Đề (Phân Tích Học Thuật)
+*   **Mâu thuẫn cơ bản:** Mối quan hệ giữa mục tiêu ngắn hạn (chữa cháy cấp bách) và mục tiêu dài hạn (định hướng chiến lược).
+*   **Thống nhất biện chứng:** Các giải pháp trước mắt nếu được định hướng đúng sẽ trở thành nền tảng cho sự phát triển lâu dài.
+*   **Minh chứng:** Giai đoạn 1945-1946 là bước đệm cho chiến thắng Điện Biên Phủ 1954.
+
+---
+
+## Phần 2: Bối Cảnh Lịch Sử (Trước & Sau Cách Mạng Tháng Tám)
+
+### 1. Chính trị: "Một cổ hai tròng"
+*   **Sự cấu kết Pháp - Nhật:** Từ tháng 9/1940, Pháp đầu hàng và cấu kết với Nhật. Pháp muốn duy trì quyền cai trị, Nhật muốn Đông Dương thành căn cứ và "kho vựa" lương thực.
+*   **Sự sụp đổ của bộ máy bù nhìn:** Ngày 9/3/1945, Nhật đảo chính Pháp. Chính phủ Trần Trọng Kim không có quyền lực thực tế.
+*   **Thời cơ vàng:** Nhật đầu hàng Đồng minh tạo "khoảng trống quyền lực" cho Tổng khởi nghĩa.
+
+### 2. Kinh tế: Kiệt quệ và Thảm khốc
+*   **Chính sách "Nhổ lúa trồng đay":** Nhật bắt nhân dân phá lúa trồng đay phục vụ chiến tranh.
+*   **Vơ vét lương thực:** Cưỡng bức thu mua gạo giá rẻ mạt, tích trữ lương thực quân đội.
+*   **Lạm phát phi mã:** Giá gạo vọt từ 4-5 đồng/tạ (1939) lên hàng trăm đồng (1945).
+
+### 3. Xã hội: Nạn đói lịch sử năm Ất Dậu
+*   **Hệ quả:** Hơn 2 triệu đồng bào chết đói. Nhiều làng quê chết 50-80% dân số.
+*   **Văn hóa - Giáo dục:** 90% dân số mù chữ do chính sách ngu dân.
+
+---
+
+## Phần 3: Xây Dựng & Bảo Vệ Chính Quyền (1945 - 1954)
+
+### I. Giai đoạn 1945 - 1946: "Ngàn cân treo sợi tóc"
+*   **Thuận lợi:** Nhân dân tin Đảng, Bác Hồ; hệ thống XHCN thế giới hình thành.
+*   **Khó khăn:** Bị bao vây cô lập. 20 vạn quân Tưởng (miền Bắc), 2 vạn quân Anh (miền Nam) dọn đường cho Pháp. 6 vạn quân Nhật chờ giải giáp.
+*   **Ba nhiệm vụ cấp bách (3/9/1945):** Diệt giặc đói, giặc dốt, giặc ngoại xâm.
+*   **Chống giặc đói:** "Hũ gạo cứu đói", "Tuần lễ vàng", "Quỹ độc lập", tăng gia sản xuất. Đầu năm 1946 nạn đói cơ bản được đẩy lùi.
+*   **Chống giặc dốt:** Bình dân học vụ. Cuối năm 1946 có hơn 2,5 triệu người biết chữ.
+*   **Củng cố chính quyền:** Tổng tuyển cử 6/1/1946 (89% cử tri), thông qua Hiến pháp đầu tiên (9/11/1946).
+*   **Sách lược ngoại giao:**
+    *   Trước 6/3/1946: Hòa hoãn với quân Tưởng ở miền Bắc để đánh Pháp ở miền Nam.
+    *   Sau 6/3/1946: Ký Hiệp định Sơ bộ và Tạm ước (14/9) để đuổi quân Tưởng, tranh thủ thời gian hòa bình chuẩn bị kháng chiến lâu dài. Đập tan vụ án Ôn Như Hầu (12/7/1946).
+
+### II. Đường lối kháng chiến và thực hiện (1946 - 1950)
+*   **Bùng nổ:** 19/12/1946 - Lời kêu gọi toàn quốc kháng chiến ("Thà hy sinh tất cả...").
+*   **Đường lối:** Toàn dân, toàn diện, trường kỳ và tự lực cánh sinh.
+*   **Chiến thắng Việt Bắc 1947:** Phá sản chiến lược "đánh nhanh thắng nhanh" của Pháp.
+*   **Chiến dịch Biên giới 1950:** Khai thông đường liên lạc quốc tế, giành quyền chủ động chiến lược.
+
+### III. Đẩy mạnh kháng chiến đến thắng lợi (1951 - 1954)
+*   **Đại hội II (2/1951):** Đảng ra hoạt động công khai (Đảng Lao động Việt Nam). Xác định nhiệm vụ: Đuổi Pháp - Mỹ, giành độc lập, người cày có ruộng.
+*   **Phát triển nội lực:** Cải cách ruộng đất (từ 1953) bồi dưỡng sức dân.
+*   **Điện Biên Phủ (1954):** Kế hoạch Nava sụp đổ. Sau 56 ngày đêm (13/3 - 7/5/1954), bắt sống tướng De Castries.
+*   **Kết thúc:** Ký Hiệp định Genève (21/7/1954). Giải phóng hoàn toàn miền Bắc sau gần 100 năm đô hộ.
+
+---
+
+## Phần 4: Liên Hệ Thực Tiễn & Bài Học (Vận Dụng Hiện Đại)
+
+### 1. Trong học tập & Sự nghiệp
+*   **Học tập:** Tránh học đối phó (ngắn hạn), hướng tới tích lũy năng lực (dài hạn).
+*   **Công việc:** Xử lý deadline/lỗi hệ thống gắn liền với cải tiến quy trình và nâng cao kỹ năng.
+*   **Case study FPT:** Doanh thu 70.000 tỷ VND (2025). Tập trung ngắn hạn (dòng tiền) song song đầu tư dài hạn (AI, Cloud).
+
+### 2. Bốn bài học xương máu
+1.  **Sự tỉnh táo:** Xác định ưu tiên (giải quyết dứt điểm "giặc đói, dốt" trước).
+2.  **Sự linh hoạt:** "Dĩ bất biến, ứng vạn biến" - Mục tiêu là bất biến, phương pháp là vạn biến.
+3.  **Sự tích lũy:** "Lấy ngắn nuôi dài" - Chuẩn bị nội lực âm thầm cho "Điện Biên Phủ" cá nhân.
+4.  **Sự kiên trì:** Tư duy "Trường kỳ" - Không "giàu xổi", thắng từng bước bền vững.
+
+---
+
+## Phụ Lục: Tính Liêm Chính & Sáng Tạo
+*   **Công cụ hỗ trợ:** ChatGPT, Gemini, NotebookLM.
+*   **Nguồn kiểm chứng:** Giáo trình Lịch sử Đảng & Báo cáo thường niên FPT 2025.
+*   **Giá trị sáng tạo:** Chuyển hóa lịch sử thành mô hình quản trị bản thân hiện đại.
