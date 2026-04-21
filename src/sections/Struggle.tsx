@@ -2,7 +2,6 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import ArchivalCard from "@/components/ui/ArchivalCard";
 import AnimatedContent from "@/components/AnimatedContent";
 import CountUp from "@/components/CountUp";
-import ScrollReveal from "@/components/ScrollReveal";
 import StampTag from "@/components/ui/StampTag";
 import HistoricPhoto from "@/components/ui/HistoricPhoto";
 
@@ -139,17 +138,12 @@ export default function Struggle() {
             <StampTag tone="cream" rotate={3}>
               Sách lược ngoại giao
             </StampTag>
-            <ScrollReveal
-              baseOpacity={0.2}
-              blurStrength={3}
-              textClassName="!font-body !text-lg !font-normal !text-cream leading-relaxed"
-              containerClassName="!my-0 mt-6"
-            >
+            <p className="serif mt-6 text-lg font-normal text-cream leading-relaxed">
               Trước 06/03/1946: hoà hoãn quân Tưởng để rảnh tay đánh Pháp ở
               miền Nam. Sau 06/03/1946: ký Hiệp định Sơ bộ và Tạm ước 14/9 để
               đẩy 20 vạn quân Tưởng về nước — đổi lấy thời gian vàng chuẩn bị
               kháng chiến trường kỳ.
-            </ScrollReveal>
+            </p>
           </div>
         </div>
       </div>
@@ -183,11 +177,11 @@ function MiniStat({
 
 function LiStep({ date, text }: { date: string; text: string }) {
   return (
-    <li className="flex gap-5 items-start">
-      <span className="shrink-0 mt-1 font-mono text-[10px] uppercase tracking-[0.2em] bg-ink text-cream px-2 py-1">
+    <li className="flex gap-4 items-start">
+      <span className="shrink-0 font-mono text-xs md:text-sm uppercase tracking-[0.15em] bg-ink text-cream px-3 py-1.5 shadow-[3px_3px_0_#D32F2F] border border-blood">
         {date}
       </span>
-      <span className="text-ink">{text}</span>
+      <span className="text-ink pt-0.5">{text}</span>
     </li>
   );
 }

@@ -81,17 +81,17 @@ export default function Hero() {
           </div>
 
           {/* ── Right: Callout panel ── */}
-          <div className="col-span-12 md:col-span-5 flex flex-col gap-3">
+          <div className="col-span-12 md:col-span-5 flex flex-col gap-4">
             {/* Mission card */}
-            <div className="bg-ink/80 backdrop-blur-sm text-cream p-4 md:p-5 border border-cream/20 shadow-[6px_6px_0_#D32F2F]">
-              <div className="font-mono text-[8px] md:text-[9px] uppercase tracking-[0.3em] opacity-70 mb-3">
+            <div className="bg-ink/80 backdrop-blur-sm text-cream p-5 md:p-6 border border-cream/20 shadow-[6px_6px_0_#D32F2F]">
+              <div className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.3em] opacity-70 mb-3.5">
                 Khẩu hiệu 03/09/1945 — Ba nhiệm vụ cấp bách
               </div>
-              <div className="font-headline text-xl md:text-2xl leading-[1.15] uppercase flex flex-wrap items-baseline gap-x-2">
+              <div className="font-headline text-2xl md:text-3xl leading-[1.1] uppercase flex flex-wrap items-baseline gap-x-2.5">
                 <span>Diệt giặc</span>
                 <RotatingText
                   texts={["đói", "dốt", "ngoại xâm"]}
-                  mainClassName="inline-flex overflow-hidden bg-blood text-cream px-2 py-0.5"
+                  mainClassName="inline-flex overflow-hidden bg-blood text-cream px-2.5 py-0.5"
                   staggerFrom="last"
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
@@ -100,15 +100,15 @@ export default function Hero() {
                   rotationInterval={2200}
                 />
               </div>
-              <div className="mt-3 h-[2px] bg-blood" />
-              <p className="serif italic mt-3 text-cream/80 text-xs leading-relaxed">
+              <div className="mt-4 h-[2px] bg-blood" />
+              <p className="serif italic mt-3.5 text-cream/85 text-sm leading-relaxed">
                 Chỉ ba mặt trận. Một vận mệnh. Chính phủ lâm thời triệu tập
                 toàn dân tộc vào cuộc trường chinh chưa từng có.
               </p>
             </div>
 
             {/* 4 stats — 2×2 */}
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-4 gap-2.5">
               <Stat value="1945" caption="CM Tháng Tám" />
               <Stat value="1954" caption="Giải phóng Bắc" />
               <Stat value="09" caption="năm kháng chiến" />
@@ -135,11 +135,11 @@ export default function Hero() {
 
 function Stat({ value, caption }: { value: string; caption: string }) {
   return (
-    <div className="bg-cream/10 border border-cream/25 p-2 md:p-3 backdrop-blur-sm">
-      <div className="font-headline text-lg md:text-2xl leading-none text-cream">
+    <div className="bg-cream/10 border border-cream/25 p-3 md:p-3.5 backdrop-blur-sm">
+      <div className="font-headline text-2xl md:text-3xl leading-none text-cream">
         {value}
       </div>
-      <div className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.15em] mt-1.5 text-cream/70 leading-tight">
+      <div className="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] mt-2 text-cream/75 leading-tight">
         {caption}
       </div>
     </div>
