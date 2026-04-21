@@ -76,7 +76,7 @@ export default function Context() {
                 50–80% dân số.
               </p>
               <p>
-                90% dân số mù chữ — hệ quả của chính sách ngu dân nhiều thập
+                95% dân số mù chữ — hệ quả của chính sách ngu dân nhiều thập
                 niên dưới ách thực dân.
               </p>
             </ArchivalCard>
@@ -106,7 +106,7 @@ export default function Context() {
           <StatBlock value={1858} caption="năm Pháp đổ bộ · mở đầu đô hộ" />
           <StatBlock value={87} suffix=" năm" caption="Việt Nam dưới ách thực dân Pháp" />
           <StatBlock value={2_000_000} caption="đồng bào chết đói · Ất Dậu 1945" />
-          <StatBlock value={90} suffix="%" caption="dân số mù chữ dưới ách thực dân" />
+          <StatBlock value={95} suffix="%" caption="dân số mù chữ dưới ách thực dân" />
         </div>
 
         <div className="mt-14 relative border-y-2 border-ink overflow-hidden bg-ink text-cream">
