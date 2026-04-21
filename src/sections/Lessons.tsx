@@ -224,7 +224,7 @@ export default function Lessons() {
 
                   <p className="serif italic text-base md:text-lg text-cream/90 leading-relaxed max-w-xl">
                     Từ <em>"hũ gạo cứu đói"</em> đến giảng đường hôm nay — từ
-                    chiến sĩ áo nâu đến lập trình viên, kỹ sư AI — ngọn lửa
+                    chiến sĩ áo xanh đến lập trình viên, kỹ sư AI — ngọn lửa
                     trường kỳ vẫn cháy.
                   </p>
 
@@ -373,7 +373,7 @@ export default function Lessons() {
                 AI có đạo đức
               </h4>
               <p className="serif text-sm text-ink/80 mt-2">
-                ChatGPT · Gemini · NotebookLM — dùng để sáng tạo, không để đối
+                ChatGPT · Gemini · NotebookLM — dùng để sáng tạo nội dung, không để đối
                 phó.
               </p>
             </div>
