@@ -173,7 +173,6 @@ export default function Victory() {
                 <BigNum value={16_000} label="quân Pháp bị tiêu diệt / bắt" />
                 <BigNum value={1} suffix=" lá cờ" label="Quyết chiến quyết thắng" />
                 <BigNum value={62} label="máy bay bị phá huỷ" />
-                <BigNum value={0} label="khả năng chuộc lỗi của Nava" />
               </div>
 
               <div className="mt-8 rule w-20 bg-cream" />
