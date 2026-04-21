@@ -45,10 +45,10 @@ export default function Nav() {
           : "bg-transparent",
       )}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-8 py-3 flex items-center justify-between gap-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 py-4 flex items-center justify-between gap-6">
         <a href="#hero" className="flex items-center gap-3 group">
-          <span className="relative inline-grid h-8 w-8 place-items-center bg-blood">
-            <svg viewBox="0 0 64 64" className="h-5 w-5">
+          <span className="relative inline-grid h-9 w-9 place-items-center bg-blood">
+            <svg viewBox="0 0 64 64" className="h-6 w-6">
               <polygon
                 points="32,10 38.6,27.2 57,27.2 42.2,37.9 47.8,55.4 32,44.7 16.2,55.4 21.8,37.9 7,27.2 25.4,27.2"
                 fill="#FFCD00"
@@ -56,10 +56,10 @@ export default function Nav() {
             </svg>
           </span>
           <span className="hidden sm:flex flex-col leading-tight">
-            <span className="font-headline text-[0.95rem] tracking-tight uppercase text-ink">
+            <span className="font-headline text-base tracking-tight uppercase text-ink">
               VNR · 1945–1954
             </span>
-            <span className="font-mono text-[9px] tracking-[0.25em] uppercase text-ink/60">
+            <span className="font-mono text-[10px] tracking-[0.25em] uppercase text-ink/60">
               Interactive Archive
             </span>
           </span>
@@ -73,14 +73,14 @@ export default function Nav() {
                 <a
                   href={`#${s.id}`}
                   className={cn(
-                    "group flex flex-col px-3 py-1.5 transition-colors",
+                    "group flex flex-col px-4 py-2 transition-colors",
                     isActive ? "bg-ink text-cream" : "hover:bg-ink/10",
                   )}
                 >
-                  <span className="font-mono text-[9px] tracking-[0.2em] uppercase opacity-70">
+                  <span className="font-mono text-[10px] tracking-[0.2em] uppercase opacity-70">
                     {s.year}
                   </span>
-                  <span className="font-headline text-sm uppercase tracking-tight">
+                  <span className="font-headline text-[0.95rem] uppercase tracking-tight">
                     {s.label}
                   </span>
                 </a>
@@ -91,7 +91,7 @@ export default function Nav() {
 
         <a
           href="#lessons"
-          className="hidden lg:inline-block bg-blood text-cream px-4 py-2 font-headline text-sm uppercase tracking-wide shadow-[3px_3px_0_#1A1A1A] hover:-translate-y-0.5 transition-transform"
+          className="hidden lg:inline-block bg-blood text-cream px-5 py-2.5 font-headline text-sm uppercase tracking-wide shadow-[3px_3px_0_#1A1A1A] hover:-translate-y-0.5 transition-transform"
         >
           Bài học →
         </a>

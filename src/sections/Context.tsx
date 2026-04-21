@@ -83,14 +83,22 @@ export default function Context() {
           </AnimatedContent>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 items-start">
           <HistoricPhoto
             src="https://vcdn1-vnexpress.vnecdn.net/2015/01/09/12-9406-1420769930.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=jfsZVILGF--946VL-4nhpg"
             alt="Nạn đói năm Ất Dậu 1945 — hơn 2 triệu đồng bào chết đói"
             caption="Nạn đói Ất Dậu 1945 · Người dân chết đói trên đường phố Hà Nội"
             credit="Ảnh tư liệu · Public Domain"
             year="1945"
-            aspect="wide"
+            aspect="landscape"
+          />
+          <HistoricPhoto
+            src="https://c.files.bbci.co.uk/C01E/production/_103228194_phapnhat.jpg"
+            alt="Nhật đảo chính Pháp ngày 09/03/1945 — khoảng trống quyền lực hình thành"
+            caption="09/03/1945 · Nhật đảo chính Pháp — thời cơ vàng của cách mạng"
+            credit="Ảnh tư liệu · Public Domain"
+            year="1945"
+            aspect="landscape"
           />
         </div>
 

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="relative bg-ink text-cream py-16 border-t-4 border-blood overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-6 flex flex-col gap-5">
-          <StampTag tone="red">Colophon</StampTag>
+          <StampTag tone="red">Credits</StampTag>
           <h3 className="headline uppercase text-4xl md:text-5xl leading-tight">
             NƯỚC VIỆT NAM LÀ MỘT
           </h3>
@@ -17,13 +17,10 @@ export default function Footer() {
 
           <div className="flex flex-wrap gap-2 pt-2">
             {[
-              "React 19",
-              "TailwindCSS 3",
+              "React",
+              "TailwindCSS",
               "ReactBits",
               "GSAP",
-              "Motion",
-              "OGL",
-              "Three",
             ].map((t) => (
               <span
                 key={t}

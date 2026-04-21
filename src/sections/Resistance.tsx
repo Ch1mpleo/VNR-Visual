@@ -77,7 +77,8 @@ export default function Resistance() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+        {/* Row 1 — Lời kêu gọi (left) × Chiến dịch 1947 (right) */}
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           <div className="lg:col-span-7">
             <div className="relative bg-cream text-ink p-6 md:p-8 border-4 border-blood shadow-[10px_10px_0_#D32F2F]">
               <div className="flex items-center justify-between mb-5 border-b-2 border-ink pb-3">
@@ -150,7 +151,7 @@ export default function Resistance() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 grid gap-5">
+          <div className="lg:col-span-5">
             <AnimatedContent distance={80}>
               <SpotlightCard
                 className="!bg-ink !border !border-cream/20 !rounded-none !p-7 !text-cream shadow-[8px_8px_0_#D32F2F]"
@@ -168,13 +169,29 @@ export default function Resistance() {
                   Việt Bắc Thu – Đông
                 </h3>
                 <p className="serif leading-relaxed text-cream/85">
-                  Phá sản chiến lược <em>“đánh nhanh thắng nhanh”</em> của
+                  Phá sản chiến lược <em>"đánh nhanh thắng nhanh"</em> của
                   Pháp. Bảo toàn căn cứ địa cách mạng — xác lập thế cầm cự,
                   chuẩn bị phản công.
                 </p>
               </SpotlightCard>
             </AnimatedContent>
+          </div>
+        </div>
 
+        {/* Row 2 — Photo (left) × Chiến dịch 1950 (right) */}
+        <div className="mt-6 lg:mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          <div className="lg:col-span-7">
+            <HistoricPhoto
+              src="https://danviet.ex-cdn.com/files/f1/upload/4-2019/images/2019-12-19/Loi-dan-cua-Tong-chi-huy-Vo-Nguyen-Giap-voi-mat-tran-Ha-Noi-truoc-ngay-Toan-quoc-khang-chien-4-1576714639-width480height316.jpg"
+              alt="Chiến sĩ Vệ quốc quân trên đường ra mặt trận · 19/12/1946"
+              caption="Toàn quốc kháng chiến · Chiến sĩ ra trận theo Lời kêu gọi của Bác Hồ"
+              credit="Ảnh tư liệu · Public Domain"
+              year="1946"
+              colorize={true}
+            />
+          </div>
+
+          <div className="lg:col-span-5">
             <AnimatedContent distance={80} delay={0.1}>
               <SpotlightCard
                 className="!bg-blood !border !border-ink !rounded-none !p-7 !text-cream shadow-[8px_8px_0_#1A1A1A]"
@@ -200,28 +217,6 @@ export default function Resistance() {
               </SpotlightCard>
             </AnimatedContent>
           </div>
-        </div>
-
-        {/*
-          ══════════════════════════════════════════════════════════════════
-          📷 RESISTANCE SECTION — HIGH-IMPACT PHOTO SLOT
-          Place a photo of Vietnamese soldiers on the march, Hồ Chí Minh
-          delivering the 19/12/1946 call to arms, or the Việt Bắc jungle
-          base during resistance operations.
-
-          → Change src="" below to your image URL.
-          ══════════════════════════════════════════════════════════════════
-        */}
-        <div className="mt-14">
-          <HistoricPhoto
-            src="https://danviet.ex-cdn.com/files/f1/upload/4-2019/images/2019-12-19/Loi-dan-cua-Tong-chi-huy-Vo-Nguyen-Giap-voi-mat-tran-Ha-Noi-truoc-ngay-Toan-quoc-khang-chien-4-1576714639-width480height316.jpg"
-            alt="Chiến sĩ Vệ quốc quân trên đường ra mặt trận · 19/12/1946"
-            caption="Toàn quốc kháng chiến · Chiến sĩ ra trận theo Lời kêu gọi của Bác Hồ"
-            credit="Ảnh tư liệu · Public Domain"
-            year="1946"
-            aspect="wide"
-            colorize={true}
-          />
         </div>
 
         <div className="mt-14">

@@ -4,7 +4,6 @@ import Aurora from "@/components/Aurora";
 import CountUp from "@/components/CountUp";
 import AnimatedContent from "@/components/AnimatedContent";
 import StampTag from "@/components/ui/StampTag";
-import ScrollFloat from "@/components/ScrollFloat";
 import ImageLightbox, { type LightboxImage } from "@/components/ui/ImageLightbox";
 
 interface TimelineItem {
@@ -170,7 +169,7 @@ export default function Victory() {
 
               <div className="mt-8 rule w-20 bg-cream" />
 
-              <div className="mt-6 grid grid-cols-2 gap-4">
+              <div className="mt-6 grid grid-cols-2 gap-3">
                 <BigNum value={16_000} label="quân Pháp bị tiêu diệt / bắt" />
                 <BigNum value={1} suffix=" lá cờ" label="Quyết chiến quyết thắng" />
                 <BigNum value={62} label="máy bay bị phá huỷ" />
@@ -237,12 +236,9 @@ export default function Victory() {
               21 · 07 · 1954
             </span>
           </div>
-          <ScrollFloat
-            containerClassName="!text-cream"
-            textClassName="!text-cream"
-          >
+          <h2 className="my-5 headline text-[clamp(1.6rem,4vw,3rem)] leading-tight text-cream">
             Giải phóng hoàn toàn miền Bắc
-          </ScrollFloat>
+          </h2>
           <p className="serif text-cream/85 italic mt-6 max-w-3xl leading-relaxed">
             Sau gần 100 năm đô hộ, gần một thập kỷ kháng chiến trường kỳ, lá cờ
             đỏ sao vàng được kéo lên trên toàn bộ miền Bắc. Nhưng chân lý
@@ -370,12 +366,16 @@ function BigNum({
   label: string;
 }) {
   return (
-    <div>
+    <div className="bg-ink border border-cream/15 p-3 shadow-[3px_3px_0_#1A1A1A]">
       <div className="font-headline text-3xl md:text-4xl text-flagYellow leading-none">
         <CountUp to={value} separator="," duration={2.4} />
-        {suffix}
       </div>
-      <div className="mt-1 font-mono text-[9px] uppercase tracking-[0.25em] text-cream/85">
+      {suffix && (
+        <div className="font-headline text-base md:text-lg text-flagYellow leading-none mt-0.5">
+          {suffix}
+        </div>
+      )}
+      <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cream/80 leading-snug">
         {label}
       </div>
     </div>
