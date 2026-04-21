@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { navigate } from "@/lib/router";
 
 const SECTIONS = [
   { id: "hero", label: "Mở đầu", year: "1945" },
@@ -89,12 +90,17 @@ export default function Nav() {
           })}
         </ul>
 
-        <a
-          href="#lessons"
-          className="hidden lg:inline-block bg-blood text-cream px-5 py-2.5 font-headline text-sm uppercase tracking-wide shadow-[3px_3px_0_#1A1A1A] hover:-translate-y-0.5 transition-transform"
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/game");
+          }}
+          className="hidden lg:inline-flex items-center gap-2 bg-blood text-cream px-5 py-2.5 font-headline text-sm uppercase tracking-wide shadow-[3px_3px_0_#1A1A1A] hover:-translate-y-0.5 transition-transform"
         >
-          Bài học →
-        </a>
+          <span className="h-1.5 w-1.5 bg-flagYellow animate-pulse" />
+          Chơi ghép nối →
+        </button>
       </div>
     </nav>
   );

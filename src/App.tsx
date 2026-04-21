@@ -6,8 +6,10 @@ import Resistance from "@/sections/Resistance";
 import Victory from "@/sections/Victory";
 import Lessons from "@/sections/Lessons";
 import Footer from "@/sections/Footer";
+import Game from "@/pages/Game";
+import { useRoute } from "@/lib/router";
 
-export default function App() {
+function Home() {
   return (
     <main className="relative bg-cream text-ink">
       <Nav />
@@ -20,4 +22,10 @@ export default function App() {
       <Footer />
     </main>
   );
+}
+
+export default function App() {
+  const path = useRoute();
+  if (path === "/game" || path === "/game/") return <Game />;
+  return <Home />;
 }

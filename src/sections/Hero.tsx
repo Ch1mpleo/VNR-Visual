@@ -1,5 +1,6 @@
 import RotatingText from "@/components/RotatingText";
 import StampTag from "@/components/ui/StampTag";
+import { navigate } from "@/lib/router";
 
 // ─── HERO BACKGROUND IMAGE ────────────────────────────────────────────────────
 // Replace the URL below to change the hero background photo.
@@ -77,6 +78,14 @@ export default function Hero() {
               >
                 4 Bài học
               </a>
+              <button
+                type="button"
+                onClick={() => navigate("/game")}
+                className="inline-flex items-center gap-2 bg-flagYellow text-ink px-5 py-2.5 font-headline uppercase tracking-wide text-xs md:text-sm shadow-[3px_3px_0_#D32F2F] hover:-translate-y-0.5 transition-transform border-2 border-ink"
+              >
+                <span className="h-1.5 w-1.5 bg-blood animate-pulse" />
+                Chơi ghép nối
+              </button>
             </div>
           </div>
 

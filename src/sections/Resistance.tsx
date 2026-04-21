@@ -116,11 +116,6 @@ export default function Resistance() {
                       />
                     </div>
 
-                    {/* Year badge — matches the typing cursor's blood red */}
-                    <div className="absolute top-0 right-0 bg-blood text-cream font-headline text-xs px-2 py-1 leading-none">
-                      1946
-                    </div>
-
                     {/* Pulse accent dot — visually syncs with the cursor blink */}
                     <span className="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-blood border-2 border-cream animate-pulse" />
                   </figure>
